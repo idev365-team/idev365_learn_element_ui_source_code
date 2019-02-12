@@ -1,5 +1,10 @@
 <template>
-    <button :autofocus="autofocus" :type="nativeType" class="c-button" :class="['c-button--'+type,buttonSizeClass,{
+    <button 
+        :autofocus="autofocus" 
+        :type="nativeType" 
+        :disabled="disable || loading"
+        class="c-button" 
+        :class="['c-button--'+type,buttonSizeClass,{
         'is-plain':plain,
         'is-round':round,
         'is-circle':circle,
@@ -19,49 +24,38 @@
 
 <script>
 export default {
-    props:{
-        type:{
-            default:"default",
-            type:String,
+    name: "CButton",
+    props: {
+        type: {
+            default: "default",
+            type: String,
         },
         nativeType:{
-            default:"button",
-            type:String,
+            default: "button",
+            type: String,
             validator: function (value) {
                 return ['button', 'reset', 'submit'].indexOf(value) !== -1
             }
         },
-        autofocus:{
-            type:Boolean,
-        },
-        plain:{
-            type:Boolean,
-        },
-        round:{
-            type:Boolean, 
-        },
-        circle:{
-            type:Boolean, 
-        },
-        disable:{
-            type:Boolean, 
-        },
-        loading:{
-            type:Boolean, 
-        },
+        autofocus: Boolean,
+        plain: Boolean,
+        round: Boolean,
+        circle: Boolean,
+        disable: Boolean,
+        loading: Boolean,
         icon:{
-            type:String,
+            type: String,
         },
-        size:{
-            type:String,
+        size: {
+            type: String,
             validator: function (value) {
                 return ['medium', 'small', 'mini','tiny'].indexOf(value) !== -1
             }
         }
 
     },
-    computed:{
-        buttonSizeClass:function(){
+    computed: {
+        buttonSizeClass: function(){
             if(this.size){
                 return 'c-button--'+this.size
             }
