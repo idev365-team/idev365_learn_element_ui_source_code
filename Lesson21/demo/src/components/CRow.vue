@@ -100,9 +100,9 @@ export default {
 
 <style lang="scss">
 .c-row:after {
+        display: block;
         content: "";
         clear: both;
-        display: block;
     }
 .c-row--flex{
     display: flex;
