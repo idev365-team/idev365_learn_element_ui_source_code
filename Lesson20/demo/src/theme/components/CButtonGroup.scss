@@ -1,0 +1,60 @@
+.c-button-group{
+    display: inline-block;
+    .c-button + .c-button{
+        margin-left:0;
+        
+    }
+    // 处理 primary类型的边框
+    .c-button--primary:last-child:not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    .c-button--primary:not(:last-child):not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    // 处理 success类型的边框
+    .c-button--success:last-child:not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    .c-button--success:not(:last-child):not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    // 处理 info类型的边框
+    .c-button--info:last-child:not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    .c-button--info:not(:last-child):not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    // 处理 warn类型的边框
+    .c-button--warning:last-child:not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    .c-button--warning:not(:last-child):not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    // 处理 danger类型的边框
+    .c-button--danger:last-child:not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+    .c-button--danger:not(:last-child):not(:first-child)  {
+            border-left-color: rgba(255, 255, 255, 0.5); 
+    }
+
+
+    .c-button:first-child:not(:last-child){
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .c-button:not(first-child):not(:last-child){
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .c-button+.c-button{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .c-button:last-child:not(:first-child){
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
