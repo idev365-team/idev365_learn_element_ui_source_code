@@ -1,0 +1,347 @@
+@import "./../common/vars.scss";
+
+.c-button{
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid $border-color-gray;
+    border-color: $border-color-gray;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px; 
+    & [class*="c-icon-"] + span {
+        margin-left: 5px;
+    }
+
+    &:hover, &:focus {
+        color: $primary-color;
+        border-color: #c6e2ff;
+        background-color: #ecf5ff; }
+    &:active {
+        color: $primary-color-dark;
+        border-color: $primary-color-dark;
+        outline: none; 
+    }
+    &.is-plain:hover, &.is-plain:focus {
+        background: #fff;
+        border-color: $primary-color;
+        color: $primary-color; 
+    }
+    &.is-plain:active {
+        background: #fff;
+        border-color: $primary-color-dark;
+        color: $primary-color-dark;
+        outline: none; 
+    }
+    &.is-active {
+        color: $primary-color-dark;
+        border-color: $primary-color-dark; 
+    }
+    &.is-round {
+        border-radius: 20px;
+        padding: 12px 23px; 
+    }
+    &.is-circle {
+        border-radius: 50%;
+        padding: 12px; 
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus {
+        color: #c0c4cc;
+        cursor: not-allowed;
+        background-image: none;
+        background-color: #fff;
+        border-color: #ebeef5;
+    }
+    &.is-loading {
+        position: relative;
+        pointer-events: none; 
+    }
+    &.is-loading:before {
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        border-radius: inherit;
+        background-color: rgba(255, 255, 255, 0.35); 
+    }
+}
+
+.c-button--default{
+    
+}
+
+.c-button--primary {
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color; 
+
+    &:hover, &:focus {
+        background: $primary-color-light;
+        border-color: $primary-color-light;
+        color: #fff; 
+    }
+    &:active {
+        background: $primary-color-dark;
+        border-color: $primary-color-dark;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-plain {
+        color: $primary-color;
+        background: #ecf5ff;
+        border-color: #b3d8ff; 
+    }
+    &.is-plain:hover, &.is-plain:focus {
+        background: $primary-color;
+        border-color: $primary-color;
+        color: #fff; 
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, &.is-disabled:active {
+        color: #fff;
+        background-color: #a0cfff;
+        border-color: #a0cfff; 
+    }
+}
+
+.c-button--success {
+    color: #fff;
+    background-color: $color-success-dark;
+    border-color: $color-success-dark; 
+    &:hover, &:focus {
+        background: $color-success-light;
+        border-color: $color-success-light;
+        color: #fff; 
+    }
+    &:active {
+        background: #5daf34;
+        border-color: #5daf34;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-plain {
+        color: $color-success-dark;
+        background: #f0f9eb;
+        border-color: #c2e7b0; 
+    }
+    &.is-plain:hover, &.is-plain:focus {
+        background: $color-success-dark;
+        border-color: $color-success-dark;
+        color: #fff; 
+    }
+    &.is-plain:active {
+        background: #5daf34;
+        border-color: #5daf34;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, &.is-disabled:active {
+        color: #fff;
+        background-color: #b3e19d;
+        border-color: #b3e19d; 
+    }
+}
+
+
+
+
+.c-button--info {
+    color: #fff;
+    background-color: $color-info;
+    border-color: $color-info; 
+    &:hover, &:focus {
+        background: $color-info-light;
+        border-color: $color-info-light;
+        color: #fff; 
+    }
+    &:active {
+        background: $color-info-dark;
+        border-color: $color-info-dark;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-plain {
+        color: $color-info;
+        background: #f4f4f5;
+        border-color: #d3d4d6; 
+    }
+    &.is-plain:hover, &.is-plain:focus {
+        background: $color-info;
+        border-color: $color-info;
+        color: #fff; 
+    }
+    &.is-plain:active {
+        background: $color-info-dark;
+        border-color: $color-info-dark;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, &.is-disabled:active {
+        color: #fff;
+        background-color: #c8c9cc;
+        border-color: #c8c9cc; 
+    }
+}
+
+.c-button--warning {
+    color: #fff;
+    background-color: $color-warning;
+    border-color: $color-warning; 
+    &:hover, &:focus {
+        background: $color-warning-light;
+        border-color: $color-warning-light;
+        color: #fff; 
+    }
+    &:active {
+        background: $color-warning-dark;
+        border-color: $color-warning-dark;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-plain {
+        color: $color-warning;
+        background: #fdf6ec;
+        border-color: #f5dab1; 
+    }
+    &.is-plain:hover, &.is-plain:focus {
+        background: $color-warning;
+        border-color: $color-warning;
+        color: #fff; 
+    }
+    &.is-plain:active {
+        background: $color-warning-dark;
+        border-color: $color-warning-dark;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, &.is-disabled:active {
+        color: #fff;
+        background-color: #f3d19e;
+        border-color: #f3d19e;
+    }
+}
+
+.c-button--danger {
+    color: #fff;
+    background-color: $color-danger;
+    border-color: $color-danger; 
+
+    &:hover, &:focus {
+        background: $color-danger-light;
+        border-color: $color-danger-light;
+        color: #fff; 
+    }
+    &:active {
+        background: $color-danger-dark;
+        border-color: $color-danger-dark;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-plain {
+        color: $color-danger;
+        background: #fef0f0;
+        border-color: #fbc4c4; }
+    &.is-plain:hover, &.is-plain:focus {
+        background: $color-danger;
+        border-color: $color-danger;
+        color: #fff; 
+    }
+    &.is-plain:active {
+        background: $color-danger-dark;
+        border-color: $color-danger-dark;
+        color: #fff;
+        outline: none; 
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, &.is-disabled:active {
+        color: #fff;
+        background-color: #fab6b6;
+        border-color: #fab6b6; 
+    }
+}
+
+.c-button--text {
+    border-color: transparent;
+    color: $primary-color;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0; 
+    &:hover, &:focus {
+        color: $primary-color-light;
+        border-color: transparent;
+        background-color: transparent; 
+    }
+    &:active {
+        color: $primary-color-dark;
+        border-color: transparent;
+        background-color: transparent; 
+    }
+    &.is-disabled, &.is-disabled:hover, &.is-disabled:focus {
+        border-color: transparent;
+    }
+}
+
+.c-button--medium {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    &.is-round {
+        padding: 10px 20px; 
+    }
+    &.is-circle {
+        padding: 10px; 
+    }
+}
+
+
+
+
+.c-button--small {
+    padding: 9px 15px;
+    font-size: 12px;
+    border-radius: 3px; 
+    &.is-round {
+        padding: 9px 15px;
+    }
+    &.is-circle {
+        padding: 9px; 
+    }
+}
+
+.c-button--mini {
+    padding: 7px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+    &.is-round {
+        padding: 7px 15px;
+    }
+    &.is-circle {
+        padding: 7px; 
+    }
+}
+
+.c-button--tiny {
+    padding: 5px 15px;
+    font-size: 10px;
+    border-radius: 3px;
+    &.is-round {
+        padding: 5px 15px;
+    }
+    &.is-circle {
+        padding: 5px; 
+    }
+}

@@ -1,0 +1,9 @@
+/**
+构建 BEM 体系
+*/
+@mixin b($block) {
+    $B: 'c'+'-'+$block;
+    .#{$B} {
+        @content;
+    }
+}
