@@ -1,0 +1,87 @@
+@import "./../common/vars.scss";
+@import "./../mixins/mixins.scss";
+
+
+[class*=c-col-]{
+    float: left;
+}
+
+@include b(col){
+    display: inline-block;
+    box-sizing: border-box;
+}
+[class*=c-col-pull],[class*=c-col-push]{
+    position: relative;
+}
+// 生成 c-col-1 到 c-col-24 
+@for $i from 0 through 24 {
+    .c-col-#{$i} { 
+      width: 100%/24*$i; 
+    }
+    .c-col-offset-#{$i} { 
+      margin-left: 100%/24*$i; 
+    }
+    .c-col-pull-#{$i}{
+        right:100%/24*$i;
+    }
+    .c-col-push-#{$i}{
+        left:100%/24*$i;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    @for $i from 0 through 24 {
+        .c-col-xs-#{$i} {
+            width: 100%/24*$i; 
+        }
+        .c-col-xs-offset-#{$i} { 
+            margin-left: 100%/24*$i; 
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    @for $i from 0 through 24 {
+        .c-col-sm-#{$i} {
+            width: 100%/24*$i; 
+        }
+        .c-col-sm-offset-#{$i} { 
+            margin-left: 100%/24*$i; 
+        }
+    }
+}
+
+@media only screen and (min-width: 992px){
+    @for $i from 0 through 24 {
+        .c-col-md-#{$i} {
+            width: 100%/24*$i; 
+        }
+        .c-col-md-offset-#{$i} { 
+            margin-left: 100%/24*$i; 
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1200px){
+    @for $i from 0 through 24 {
+        .c-col-lg-#{$i} {
+            width: 100%/24*$i; 
+        }
+        .c-col-lg-offset-#{$i} { 
+            margin-left: 100%/24*$i; 
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1920px){
+    @for $i from 0 through 24 {
+        .c-col-xl-#{$i} {
+            width: 100%/24*$i; 
+        }
+        .c-col-xl-offset-#{$i} { 
+            margin-left: 100%/24*$i; 
+        }
+    }
+}

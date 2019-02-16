@@ -1,0 +1,14 @@
+@import "./../common/vars.scss";
+@import "./../mixins/mixins.scss";
+
+@include b(footer){
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+@include b(footer){
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
+}

@@ -1,0 +1,10 @@
+@import "./../common/vars.scss";
+@import "./../mixins/mixins.scss";
+@import "./../theme/src/common/vars.scss";
+
+@include b(radio-group){
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    font-size: 0;
+}

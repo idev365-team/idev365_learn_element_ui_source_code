@@ -1,0 +1,17 @@
+@import "./mixins/mixins.scss";
+
+@include b(menu){
+    color:red;
+
+    @include m([small,mini]){
+        font-size: 10px;
+    }
+}
+
+@include e([item]){
+    font-size:14px;
+    @include m([success,fail]){
+        font-size: 10px;
+    }
+}
+

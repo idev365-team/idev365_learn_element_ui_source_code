@@ -1,0 +1,42 @@
+@import "./config.scss";
+
+/**
+构建 BEM 体系
+*/
+@mixin b($block) {
+    $B: $namespace+'-'+$block !global;
+    .#{$B} {
+        @content;
+    }
+}
+
+@mixin e($element) {
+    $E: $element !global;
+    $selector: &;
+    $currentSelector: "";
+
+    @each $unit in $element {
+        $currentSelector: #{ $currentSelector + "." + $B + $element-separator + $unit + "," };
+    }
+
+    #{$currentSelector}{
+        @content;
+    }
+}
+
+
+@mixin m($modifier) {
+    $selector:&;
+    $currentSelector:"";
+    @each $unit in $modifier {
+        $currentSelector: #{  $currentSelector+&+$modifier-separator+$unit + "," }
+    }
+
+    #{$currentSelector}{
+        @content;
+    }
+
+
+
+
+}
