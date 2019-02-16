@@ -1,0 +1,11 @@
+@import "./config.scss";
+
+/**
+构建 BEM 体系
+*/
+@mixin b($block) {
+    $B: $namespace+'-'+$block;
+    .#{$B} {
+        @content;
+    }
+}
