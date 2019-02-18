@@ -1,0 +1,7 @@
+@import "./mixins/mixins.scss";
+
+.hello{
+    @include when(disabled){
+        color:black;
+    }
+}
