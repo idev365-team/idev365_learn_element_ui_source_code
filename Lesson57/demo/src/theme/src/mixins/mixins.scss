@@ -1,0 +1,60 @@
+@import "./config.scss";
+@import "./../common/vars.scss";
+
+/**
+构建 BEM 体系
+*/
+@mixin b($block) {
+    $B: $namespace+'-'+$block !global;
+    .#{$B} {
+        @content;
+    }
+}
+
+@mixin e($element) {
+    $E: $element !global;
+    $selector: &;
+    $currentSelector: "";
+
+    @each $unit in $element {
+        $currentSelector: #{ $currentSelector + "." + $B + $element-separator + $unit + "," };
+    }
+    
+    #{$currentSelector}{
+        @content;
+    }
+}
+
+@mixin m($modifier) {
+    $selector:&;
+    $currentSelector:"";
+    @each $unit in $modifier {
+        $currentSelector: #{  $currentSelector+&+$modifier-separator+$unit + "," }
+    }
+
+    @at-root{
+        #{$currentSelector}{
+            @content;
+        }
+    }
+}
+
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state}{
+            @content;
+        }
+    }
+}
+
+
+//响应式相关的API
+@mixin res($key,$map:$--breakpoints) {
+    @if map-has-key($map, $key) {
+        @media only screen and #{inspect(map-get($map,$key))}{
+            @content;
+        }
+    }@else{
+        @warn "key不存在"+#{$key};
+    }
+}
