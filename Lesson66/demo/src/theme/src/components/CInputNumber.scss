@@ -1,0 +1,106 @@
+@import "./../common/vars.scss";
+@import "./../mixins/mixins.scss";
+@import "./../theme/src/common/vars.scss";
+
+@include b(input-number){
+   width: 180px;
+   display: inline-block;
+
+   @include when(controls-right){
+      .c-input__inner{
+         border-radius: 4px;
+         padding-right: 50px;
+      }
+      .c-input-group{
+         display: inline-block;
+         
+      }
+      .c-input-group__prepend,.c-input-group__append{
+         height:19px;
+         width:40px;
+         position: absolute;
+         right:1px;
+      }
+      .c-input-group__prepend{
+         top:1px;
+         border-radius: 4px;
+         border-top-left-radius: 0;
+         border-bottom-left-radius: 0;
+         border-top:0;
+      }
+      .c-input-group__append{
+         bottom: 1px;
+         border: 1px solid #dcdfe6;
+         border-right: 0;
+         border-bottom-right-radius: 4px;
+         border-top-right-radius: 0;
+         border-bottom: 0;
+      }
+   }
+
+   @include b(button){
+      @include when(disabled){
+         & > [class*="c-icon-"]{
+            color: #c0c4cc;
+            cursor: not-allowed;
+            &:hover{
+               color: #c0c4cc;
+            }
+         }
+         
+      }
+   }
+
+   @include b(button){
+      padding: 0 12px;
+      & > [class*="c-icon-"]{
+         color: #606266;
+         &:hover{
+            color: $primary-color;
+         }
+      }
+      
+   }
+   @include b(input-group){
+      @include e([prepend,append]){
+         padding:0;
+      }
+   }
+   @include b(input){
+      
+     @include e(inner){
+        text-align: center;
+     }
+   }
+
+   @include m(medium){
+      width: 180px;
+      @include b(input){
+      
+         @include e(inner){
+            height:36px;
+         }
+       }
+   }
+
+   @include m(small){
+      width: 140px;
+      @include b(input){
+      
+         @include e(inner){
+            height:32px;
+         }
+       }
+   }
+
+   @include m(mini){
+      width: 140px;
+      @include b(input){
+      
+         @include e(inner){
+            height:28px;
+         }
+       }
+   }
+
+}

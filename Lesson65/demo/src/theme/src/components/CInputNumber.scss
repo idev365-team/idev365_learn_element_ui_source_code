@@ -1,0 +1,74 @@
+@import "./../common/vars.scss";
+@import "./../mixins/mixins.scss";
+@import "./../theme/src/common/vars.scss";
+
+@include b(input-number){
+   width: 180px;
+   display: inline-block;
+
+   @include b(button){
+      @include when(disabled){
+         & > [class*="c-icon-"]{
+            color: #c0c4cc;
+            cursor: not-allowed;
+            &:hover{
+               color: #c0c4cc;
+            }
+         }
+         
+      }
+   }
+
+   @include b(button){
+      padding: 0 12px;
+      & > [class*="c-icon-"]{
+         color: #606266;
+         &:hover{
+            color: $primary-color;
+         }
+      }
+      
+   }
+   @include b(input-group){
+      @include e([prepend,append]){
+         padding:0;
+      }
+   }
+   @include b(input){
+      
+     @include e(inner){
+        text-align: center;
+     }
+   }
+
+   @include m(medium){
+      width: 180px;
+      @include b(input){
+      
+         @include e(inner){
+            height:36px;
+         }
+       }
+   }
+
+   @include m(small){
+      width: 140px;
+      @include b(input){
+      
+         @include e(inner){
+            height:32px;
+         }
+       }
+   }
+
+   @include m(mini){
+      width: 140px;
+      @include b(input){
+      
+         @include e(inner){
+            height:28px;
+         }
+       }
+   }
+
+}

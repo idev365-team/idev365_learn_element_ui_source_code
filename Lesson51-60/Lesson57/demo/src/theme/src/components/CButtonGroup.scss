@@ -1,0 +1,36 @@
+@import "./../mixins/mixins.scss";
+
+@include b(button-group){
+    display: inline-block;
+    .c-button + .c-button{
+        margin-left:0;
+    }
+
+    @each $type in (primary,success,info,warning,danger){
+        .c-button--#{$type}:last-child:not(:first-child)  {
+                border-left-color: rgba(255, 255, 255, 0.5); 
+        }
+        .c-button--#{$type}:not(:last-child):not(:first-child)  {
+                border-left-color: rgba(255, 255, 255, 0.5); 
+        }
+    }
+
+    & > .c-button{
+        &:first-child:not(:last-child){
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+        }
+        &:not(first-child):not(:last-child){
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+        }
+        &+.c-button{
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+        }
+        &:last-child:not(:first-child){
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+        }
+    }
+}
